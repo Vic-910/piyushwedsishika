@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#2a080c" />
+<title>Piyush & Ishika — Shubh Vivah</title>
+<meta name="description" content="Wedding invitation · Piyush & Ishika · 11 December 2026" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#7a171d;--maroon-deep:#4b1015;--gold:#e7bd68;--gold-hi:#fff0bd;--gold-deep:#a8691f;--cream:#fff4dc;--ink:#351014;
+  --paper:linear-gradient(160deg,#fff8e8 0%,#f7e2b4 52%,#edc98a 100%)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:#21090b;color:var(--cream);font-family:'Playfair Display',serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+body.locked{overflow:hidden}
+button{font:inherit;color:inherit}
+.backdrop{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 120% 75% at 50% 0%,#64161c 0%,#3a0a10 45%,#1a050a 100%)}
+#universe{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;opacity:0;transition:opacity 1.4s ease}
+body.scene-ready #universe{opacity:1}
+.vignette{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at 50% 42%,transparent 35%,rgba(12,2,4,.55) 100%)}
+.grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+main{position:relative;z-index:3}
+
+/* ───────────── Palace-door gate (intro) ───────────── */
+.gate{position:fixed;inset:0;z-index:60;perspective:1800px;overflow:hidden;cursor:pointer;outline:none}
+.door{position:absolute;top:0;bottom:0;width:50%;transition:transform 2.1s cubic-bezier(.65,0,.25,1),filter 2.1s;
+  background:
+   radial-gradient(circle at 50% 50%,rgba(240,196,110,.22) 1.4px,transparent 2.4px) 0 0/24px 24px,
+   repeating-linear-gradient(45deg,rgba(231,189,104,.07) 0 1px,transparent 1px 12px),
+   repeating-linear-gradient(-45deg,rgba(231,189,104,.07) 0 1px,transparent 1px 12px),
+   linear-gradient(180deg,#62111a 0%,#3d080e 60%,#2a050a 100%);
+  box-shadow:inset 0 0 140px rgba(0,0,0,.6)}
+.door-l{left:0;transform-origin:0 50%}
+.door-r{right:0;transform-origin:100% 50%}
+.door:before{content:"";position:absolute;inset:clamp(12px,2.6vw,26px);border:2px solid rgba(231,189,104,.7);outline:1px solid rgba(231,189,104,.3);outline-offset:5px}
+.door-l:before{right:6px}.door-r:before{left:6px}
+.arch{position:absolute;left:16%;right:16%;top:13%;bottom:11%;border:1.5px solid rgba(231,189,104,.55);border-radius:50% 50% 8px 8px/26% 26% 8px 8px;
+  background:radial-gradient(ellipse at 50% 30%,rgba(231,170,80,.16),transparent 70%)}
+.arch:before{content:"✿";position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-size:26px;color:var(--gold);text-shadow:0 0 12px rgba(255,190,90,.6)}
+.arch:after{content:"";position:absolute;inset:12px;border:1px dashed rgba(231,189,104,.35);border-radius:inherit}
+.seal-half{position:absolute;top:50%;width:clamp(64px,14vw,112px);height:clamp(128px,28vw,224px);transform:translateY(-50%);display:grid;align-items:center;
+  font:clamp(40px,8.5vw,70px)/1 'Great Vibes',cursive;color:#5d0f17;box-shadow:0 0 34px rgba(231,189,104,.45);z-index:1}
+.door-l .seal-half{right:0;border-radius:999px 0 0 999px;justify-items:end;padding-right:clamp(8px,2vw,16px);background:radial-gradient(circle at 100% 50%,#fff3c8 0,#ecc066 38%,#b47a32 70%,#7a4413 100%)}
+.door-r .seal-half{left:0;border-radius:0 999px 999px 0;justify-items:start;padding-left:clamp(8px,2vw,16px);background:radial-gradient(circle at 0% 50%,#fff3c8 0,#ecc066 38%,#b47a32 70%,#7a4413 100%)}
+.knock{position:absolute;top:calc(50% + clamp(78px,16vw,130px));width:30px;height:30px;border:3px solid #e2b45e;border-radius:50%;box-shadow:0 0 12px rgba(231,189,104,.5),inset 0 0 6px rgba(0,0,0,.4)}
+.door-l .knock{right:clamp(14px,3vw,26px)}.door-r .knock{left:clamp(14px,3vw,26px)}
+.gate-toran{position:absolute;top:0;left:-16px;right:-16px;height:58px;z-index:3;pointer-events:none;transition:transform 1.4s cubic-bezier(.65,0,.25,1);
+  background:
+   radial-gradient(ellipse 8px 20px at 50% 30px,#2f7a35 0 96%,transparent 100%) 16px 0/32px 58px repeat-x,
+   radial-gradient(circle at 50% 12px,#ffb62e 0 9px,#f07c00 10px 13px,transparent 14px) 0 0/32px 58px repeat-x,
+   linear-gradient(#7a4413,#7a4413) 0 0/100% 3px no-repeat}
+.gate-light{position:absolute;left:50%;top:0;bottom:0;width:3px;transform:translateX(-50%);z-index:2;pointer-events:none;opacity:0;
+  background:linear-gradient(180deg,transparent,#fff1c4 30%,#ffd27a 70%,transparent);box-shadow:0 0 40px 10px rgba(255,200,110,.55)}
+.gate-ui{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;
+  padding:max(74px,calc(env(safe-area-inset-top) + 64px)) 18px max(38px,calc(env(safe-area-inset-bottom) + 28px));pointer-events:none;transition:opacity .5s}
+.gate-top .g1{font-family:'Tiro Devanagari Hindi',serif;color:#ffe2a0;font-size:clamp(15px,3.6vw,20px);text-shadow:0 2px 14px #d88b34}
+.gate-top .g2{margin-top:8px;font:clamp(36px,8vw,58px)/1.1 'Great Vibes',cursive;color:#ffe7b2;text-shadow:0 4px 24px rgba(228,167,67,.45)}
+.gate-top .g3{margin-top:6px;font:10px Cinzel,serif;letter-spacing:.34em;color:#e7c88d}
+.gate-cta{pointer-events:auto;position:relative;border:1px solid #f0ce83;background:linear-gradient(135deg,#f5d690,#b57b32);color:#3c0e12;padding:15px 30px;border-radius:40px;
+  font:700 12px Cinzel,serif;letter-spacing:.18em;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.gate-cta:before{content:"";position:absolute;inset:-6px;border-radius:inherit;border:1px solid rgba(240,206,131,.7);animation:ctaPulse 2s ease-out infinite}
+@keyframes ctaPulse{from{transform:scale(1);opacity:.9}to{transform:scale(1.25,1.5);opacity:0}}
+.gate-sound{margin-top:12px;font:9px Cinzel,serif;letter-spacing:.2em;color:#e7c88d;opacity:.85}
+.gate.open{pointer-events:none}
+.gate.open .gate-ui{opacity:0}
+.gate.open .door-l{transform:rotateY(-108deg);filter:brightness(.55)}
+.gate.open .door-r{transform:rotateY(108deg);filter:brightness(.55)}
+.gate.open .gate-toran{transform:translateY(-110%)}
+.gate.open .gate-light{animation:lightBurst 1.7s ease-out forwards}
+@keyframes lightBurst{0%{opacity:0;width:3px}18%{opacity:1}100%{opacity:0;width:140vw}}
+.gate.gone{display:none}
+
+/* ───────────── Hero ───────────── */
+.hero{min-height:100svh;display:grid;place-items:center;padding:clamp(120px,19vh,170px) 16px 84px;position:relative;perspective:1400px}
+.hero-inner{width:min(760px,100%);text-align:center;position:relative;transform-style:preserve-3d;opacity:0}
+body.opened .hero-inner{animation:arrive 1.6s .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes arrive{from{opacity:0;transform:translateY(40px) rotateX(14deg) scale(.96)}to{opacity:1;transform:none}}
+.eyebrow{font-family:Cinzel,serif;letter-spacing:.32em;text-transform:uppercase;font-size:11px;color:var(--gold-hi);opacity:.95;text-shadow:0 1px 2px #1a0306,0 0 12px #1a0306}
+.ganesh{font-family:'Tiro Devanagari Hindi',serif;color:#ffe7a8;font-size:clamp(17px,3vw,22px);text-shadow:0 2px 15px #d88b34;margin:14px 0 20px}
+.card{position:relative;border:1px solid rgba(239,199,115,.9);border-radius:48% 48% 24px 24px/14% 14% 24px 24px;background:var(--paper);color:var(--ink);overflow:hidden;isolation:isolate;
+  box-shadow:0 30px 90px rgba(8,2,3,.7),inset 0 0 0 7px rgba(255,255,255,.36),inset 0 0 0 9px rgba(164,99,26,.25),0 0 60px rgba(214,155,59,.25);
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .6s;will-change:transform}
+.card.tilting{transition:transform .12s linear,box-shadow .6s}
+.card:hover{box-shadow:0 36px 100px rgba(8,2,3,.75),inset 0 0 0 7px rgba(255,255,255,.42),inset 0 0 0 9px rgba(164,99,26,.3),0 0 80px rgba(233,182,77,.35)}
+.card-frame{position:absolute;inset:16px;border:1px solid rgba(164,99,26,.4);border-radius:46% 46% 14px 14px/13% 13% 14px 14px;pointer-events:none;z-index:0}
+.card-glare{position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.5),transparent 48%);mix-blend-mode:soft-light}
+.card-shimmer{position:absolute;z-index:2;top:-70%;bottom:-70%;left:-40%;width:26%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:rotate(22deg);animation:cardShimmer 7s ease-in-out infinite}
+@keyframes cardShimmer{0%,58%{left:-40%}100%{left:130%}}
+.card-body{position:relative;z-index:1;padding:clamp(40px,7vw,66px) clamp(18px,7vw,70px) clamp(30px,5vw,46px)}
+.card:before,.card:after{content:'✦';position:absolute;color:#a56a24;font-size:22px;top:24px;z-index:2}
+.card:before{left:26px}.card:after{right:26px}
+.topline{font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(13px,2.3vw,17px);color:#8c3a1c;line-height:1.8}
+.title-hi{font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(27px,6vw,46px);font-weight:bold;color:#7e171b;margin:10px 0 0;text-shadow:0 2px 0 #f9d98f}
+.subtitle{font-family:Cinzel,serif;letter-spacing:.27em;font-size:10px;color:#9a692f}
+.divider{display:flex;align-items:center;gap:12px;justify-content:center;color:#a66a2a;margin:20px 0}
+.divider:before,.divider:after{content:'';height:1px;width:76px;background:linear-gradient(90deg,transparent,#b47a31)}
+.divider:after{transform:rotate(180deg)}
+.couple{font-family:'Great Vibes',cursive;font-size:clamp(40px,8vw,62px);color:#6e171a;line-height:1.15;text-shadow:1px 2px 0 #f5d18a}
+.amp{color:#b78236;font-size:.8em;padding:0 7px}
+.invite-copy{font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(15px,2.8vw,19px);line-height:1.9;color:#592a20;margin:12px auto 24px;max-width:520px}
+.date-ribbon{display:inline-block;padding:10px 28px;border:1px solid #b87a32;background:linear-gradient(135deg,#74151b,#a52a26);color:#fff1cf;box-shadow:0 5px 16px rgba(90,22,27,.3);font-family:Cinzel,serif;letter-spacing:.16em;font-size:11px}
+.date-big{font-family:Cinzel,serif;font-size:clamp(22px,4.4vw,30px);font-weight:700;letter-spacing:.1em;margin:10px 0 6px;color:#6e171a}
+.date-sub{font-family:'Tiro Devanagari Hindi',serif;font-size:15px;color:#7d3826}
+.open-btn{position:relative;overflow:hidden;margin-top:26px;border:1px solid #f0ce83;background:linear-gradient(135deg,#f3d38c,#b57b32);color:#451014;padding:14px 26px;border-radius:40px;font-family:Cinzel,serif;font-weight:600;letter-spacing:.14em;font-size:11px;cursor:pointer;box-shadow:0 8px 25px rgba(122,44,29,.3);transition:transform .25s,box-shadow .25s}
+.open-btn:hover{transform:translateY(-3px);box-shadow:0 13px 30px rgba(122,44,29,.45)}
+.countdown-panel{margin:24px auto 0;max-width:500px;padding:15px 17px;border:1px solid rgba(220,182,109,.45);border-radius:18px;background:linear-gradient(135deg,rgba(59,13,19,.82),rgba(106,37,29,.55));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 12px 34px rgba(0,0,0,.3)}
+.countdown-heading{font:9px Cinzel,serif;letter-spacing:.24em;color:#f4d99d;margin-bottom:12px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.countdown>div{display:grid;gap:4px;position:relative}
+.countdown>div+div:before{content:"";position:absolute;left:-4px;top:15%;bottom:25%;width:1px;background:linear-gradient(transparent,rgba(231,189,104,.5),transparent)}
+.countdown strong{font:clamp(22px,5vw,34px) Cinzel,serif;color:#fff0c7;text-shadow:0 0 18px rgba(228,176,76,.55);font-variant-numeric:tabular-nums}
+.countdown span{font:8px Cinzel,serif;letter-spacing:.16em;color:#e8c98d}
+.scroll-hint{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:Cinzel,serif;letter-spacing:.2em;font-size:9px;color:#f1d79f;opacity:0;transition:opacity 1s 2s}
+body.opened .scroll-hint{opacity:.8}
+.scroll-hint span{display:block;font-size:20px;margin-top:6px;animation:bob 1.6s infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+
+/* ───────────── Sections ───────────── */
+.section{padding:90px 18px;position:relative}
+.section-inner{max-width:1120px;margin:auto}
+.section-kicker{text-align:center;font-family:Cinzel,serif;font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;text-shadow:0 1px 2px #1a0306,0 0 10px #1a0306,0 0 18px rgba(26,3,6,.8)}
+.section-title{text-align:center;font-family:'Great Vibes',cursive;font-size:clamp(50px,8vw,78px);font-weight:400;color:#ffe7b2;margin:6px 0 6px;text-shadow:0 2px 3px rgba(25,4,7,.95),0 0 18px rgba(25,4,7,.9),0 0 40px rgba(25,4,7,.7),0 4px 25px rgba(228,167,67,.3)}
+.section-orn{text-align:center;color:var(--gold);letter-spacing:.5em;margin:0 0 40px;font-size:14px}
+
+/* Events — jharokha arch cards */
+.events{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;perspective:1200px}
+.event{position:relative;padding:34px 18px 26px;text-align:center;border-radius:160px 160px 18px 18px;background:var(--paper);color:#4c1718;border:1px solid #d9b064;overflow:hidden;
+  box-shadow:0 18px 40px rgba(9,2,3,.45);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.event:after{content:"";position:absolute;inset:7px;border:1px solid rgba(160,100,30,.42);border-radius:152px 152px 13px 13px;pointer-events:none}
+.event:before{content:"";position:absolute;top:-80%;left:-60%;width:40%;height:260%;background:linear-gradient(90deg,transparent,rgba(255,248,216,.55),transparent);transform:rotate(25deg);transition:left .9s}
+.event:hover{transform:translateY(-10px);box-shadow:0 28px 50px rgba(9,2,3,.55),0 0 40px rgba(231,189,104,.25)}
+.event:hover:before{left:140%}
+.medallion{width:76px;height:76px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font-size:34px;
+  background:radial-gradient(circle at 35% 30%,#fff3c9,#e2ad52 60%,#a8691f);box-shadow:0 0 0 4px #fff3d6,0 0 0 5px #c08c40,0 10px 22px rgba(122,44,29,.3);animation:medal 3.2s ease-in-out infinite}
+@keyframes medal{50%{box-shadow:0 0 0 4px #fff3d6,0 0 0 5px #c08c40,0 10px 30px rgba(231,150,40,.55)}}
+.event .day{font:700 46px/1 Cinzel,serif;color:#7a171d}
+.event .month{font:10px Cinzel,serif;letter-spacing:.24em;color:#a06a2b;margin-top:6px;text-transform:uppercase}
+.event h3{font-family:'Tiro Devanagari Hindi',serif;font-size:21px;line-height:1.4;margin:14px 0 8px;color:#791c20;min-height:2.8em;display:flex;align-items:center;justify-content:center}
+.event p{font-size:14px;line-height:1.65;margin:0;color:#60352a}
+.event .tag{display:inline-block;margin-top:16px;padding:6px 13px;border-radius:20px;background:#7a171d;color:#ffe9b8;font:9px Cinzel,serif;letter-spacing:.18em}
+
+/* Venues */
+.venue-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;perspective:1200px}
+.venue{position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;border-radius:24px;background:var(--paper);color:#4c1718;border:1px solid #d6ad62;
+  box-shadow:0 20px 44px rgba(9,2,3,.45);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.venue:before{content:"";position:absolute;inset:8px;border:1px solid rgba(160,100,30,.38);border-radius:18px;pointer-events:none}
+.venue:hover{transform:translateY(-6px);box-shadow:0 30px 56px rgba(9,2,3,.55),0 0 40px rgba(231,189,104,.22)}
+.venue-head{display:flex;gap:16px;align-items:center}
+.pin-anim{position:relative;flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#b23a35,#6d141a);box-shadow:0 8px 18px rgba(109,20,26,.35),inset 0 0 0 2px rgba(255,227,161,.5)}
+.pin-anim svg{width:26px;height:26px;fill:#ffe3a1;animation:pinBounce 2.6s ease-in-out infinite;transform-origin:50% 100%}
+.pin-anim:before,.pin-anim:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #c9893a;animation:ripple 2.6s ease-out infinite}
+.pin-anim:after{animation-delay:1.3s}
+@keyframes ripple{from{transform:scale(1);opacity:.85}to{transform:scale(1.9);opacity:0}}
+@keyframes pinBounce{0%,100%{transform:translateY(0)}25%{transform:translateY(-8px) scale(1,1.04)}40%{transform:translateY(0) scale(1.08,.92)}52%{transform:translateY(-3px)}64%{transform:translateY(0)}}
+.venue-tag{font:9px Cinzel,serif;letter-spacing:.24em;color:#a06a2b;text-transform:uppercase}
+.venue h3{font:400 clamp(30px,4.4vw,40px)/1.08 'Great Vibes',cursive;color:#791c20;margin:3px 0 0}
+.venue-meta{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:11px}
+.venue-meta li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:14.5px;line-height:1.55;color:#5a2a22}
+.venue-meta svg{width:18px;height:18px;margin-top:2px;stroke:#a0302c;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.venue-bottom{margin-top:auto;padding-top:20px}
+.map-frame{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:16/10;border:1px solid #bd8b45;background:#e9dcc0;box-shadow:0 10px 26px rgba(64,23,25,.22),inset 0 0 0 1px rgba(255,255,255,.4)}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;opacity:0;transition:opacity .7s}
+.map-frame.loaded iframe{opacity:1}
+.map-frame.active iframe{pointer-events:auto}
+.map-skeleton{position:absolute;inset:0;display:grid;place-items:center;transition:opacity .6s;
+  background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%) 0 0/250% 100% no-repeat,
+   repeating-linear-gradient(28deg,transparent 0 38px,rgba(255,255,255,.6) 38px 45px),
+   repeating-linear-gradient(-62deg,transparent 0 56px,rgba(255,255,255,.5) 56px 61px),
+   radial-gradient(circle at 70% 30%,#cfe3c0 0 40px,transparent 41px),#eadfc6;animation:skShimmer 1.8s linear infinite}
+.map-skeleton svg{width:38px;height:38px;fill:#a0302c;animation:pinBounce 1.4s ease-in-out infinite;filter:drop-shadow(0 6px 4px rgba(0,0,0,.25))}
+@keyframes skShimmer{from{background-position:150% 0,0 0,0 0,0 0,0 0}to{background-position:-150% 0,0 0,0 0,0 0,0 0}}
+.map-frame.loaded .map-skeleton{opacity:0}
+.map-cover{position:absolute;inset:0;z-index:2;border:0;margin:0;padding:12px;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,transparent 55%,rgba(53,16,20,.5));transition:opacity .35s}
+.map-cover span{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:30px;background:rgba(43,11,14,.9);color:#ffe9b8;font:10px Cinzel,serif;letter-spacing:.12em;border:1px solid #d9b56e;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .25s}
+.map-cover:hover span{transform:translateY(-2px)}
+.map-frame.active .map-cover{opacity:0;pointer-events:none}
+.venue-actions{display:flex;gap:8px;margin-top:12px}
+.btn-primary{position:relative;overflow:hidden;flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 14px;border-radius:30px;
+  background:linear-gradient(135deg,#7a171d,#a8352b);color:#fff0cb;text-decoration:none;font:600 10px Cinzel,serif;letter-spacing:.1em;box-shadow:0 6px 16px rgba(122,23,29,.3);transition:transform .2s,box-shadow .2s}
+.btn-primary:after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(90deg,transparent,rgba(255,240,200,.35),transparent);transform:skewX(-20deg);animation:btnSheen 4.5s ease-in-out infinite}
+@keyframes btnSheen{0%,70%{left:-60%}100%{left:130%}}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(122,23,29,.45)}
+.btn-primary svg,.btn-icon svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.btn-icon{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:0 14px;border-radius:30px;border:1px solid #a66a2a;background:rgba(255,250,235,.55);color:#712026;font:600 10px Cinzel,serif;letter-spacing:.06em;cursor:pointer;transition:background .2s,transform .2s}
+.btn-icon:hover{background:#fff8e6;transform:translateY(-2px)}
+.btn-icon[hidden]{display:none}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px) rotateX(16deg);transform-origin:50% 100%;transition:opacity .9s ease var(--d,0s),transform 1s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.reveal.visible{opacity:1;transform:none}
+.event.reveal.visible:hover{transform:translateY(-10px)}
+.venue.reveal.visible:hover{transform:translateY(-6px)}
+
+.blessing{text-align:center;padding:40px 16px 90px;font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(18px,3vw,24px);line-height:1.9;color:#ffe6b0;text-shadow:0 2px 3px rgba(25,4,7,.95),0 0 16px rgba(25,4,7,.9),0 0 36px rgba(25,4,7,.7)}
+.blessing .ornament{color:var(--gold);font-size:24px;letter-spacing:.35em;margin:16px 0}
+.blessing strong{display:block;font:400 clamp(44px,8vw,68px)/1.2 'Great Vibes',cursive;color:#fff0c9;text-shadow:0 4px 24px rgba(228,167,67,.4)}
+.footer{text-align:center;padding:20px 15px calc(90px + env(safe-area-inset-bottom));color:#d5b77e;font-family:Cinzel,serif;font-size:9px;letter-spacing:.25em}
+
+/* Music dock */
+.music-dock{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:4px;padding:5px;
+  border:1px solid rgba(232,196,119,.55);border-radius:40px;background:rgba(40,9,13,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.45);
+  opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .6s 1s,transform .6s 1s}
+body.opened .music-dock{opacity:1;transform:none;pointer-events:auto}
+.music-dock select{appearance:none;-webkit-appearance:none;border:0;outline:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23e7bd68' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 8px center;
+  color:#ffe9b7;font:10px Cinzel,serif;letter-spacing:.05em;padding:9px 24px 9px 12px;max-width:170px;cursor:pointer}
+.music-dock select option{color:#351014;background:#fff4dc}
+.music-control{display:flex;align-items:center;gap:8px;border:0;border-radius:30px;padding:9px 14px;background:linear-gradient(135deg,#efc977,#b47a32);color:#3c0e12;font:700 10px Cinzel,serif;letter-spacing:.1em;cursor:pointer;transition:transform .2s}
+.music-control:hover{transform:translateY(-2px)}
+.music-bars{display:flex;gap:2px;align-items:center;height:14px}
+.music-bars i{display:block;width:2px;height:4px;background:#5d0f17;border-radius:2px}
+.music-control.playing .music-bars i{animation:eq .6s ease-in-out infinite alternate}
+.music-bars i:nth-child(2){animation-delay:.18s}.music-bars i:nth-child(3){animation-delay:.34s}.music-bars i:nth-child(4){animation-delay:.1s}
+@keyframes eq{to{height:14px}}
+.sound-note{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:calc(max(14px,env(safe-area-inset-bottom)) + 60px);z-index:19;color:#f6dca8;background:rgba(43,11,13,.9);border:1px solid #d5ae69;border-radius:20px;padding:8px 13px;font:10px Cinzel,serif;letter-spacing:.06em;opacity:0;transform:translateY(8px);transition:.4s;pointer-events:none;max-width:calc(100vw - 28px)}
+.sound-note.show{opacity:1;transform:none}
+
+.sparkle{position:fixed;z-index:30;pointer-events:none;color:#ffe8a8;text-shadow:0 0 12px #ffc95b;animation:sparkleOut 1.5s ease-out forwards}
+@keyframes sparkleOut{0%{opacity:0;transform:scale(.2)}20%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(1.6) rotate(120deg)}}
+.petal{position:fixed;top:-30px;z-index:2;pointer-events:none;font-size:15px;opacity:.85;color:#ff9a2a;animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(650deg);opacity:.1}}
+
+@media(max-width:1020px){.events{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){.venue-wrap{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .events{grid-template-columns:1fr;gap:16px}
+  .event h3{min-height:0}
+  .section{padding:62px 14px}
+  .hero{min-height:auto;padding:118px 12px 70px}
+  .card{border-radius:30% 30% 18px 18px/7% 7% 18px 18px}
+  .card-frame{inset:11px;border-radius:29% 29% 12px 12px/6.5% 6.5% 12px 12px}
+  .card-body{padding:44px 16px 30px}
+  .card:before,.card:after{top:20px;font-size:18px}.card:before{left:20px}.card:after{right:20px}
+  .invite-copy{font-size:15px}
+  .countdown-panel{margin-top:16px;padding:12px 8px}
+  .countdown{gap:4px}.countdown span{font-size:7px}
+  .venue{padding:22px 16px 18px}
+  .venue-meta li{font-size:14px}
+  .map-frame{aspect-ratio:4/3}
+  .music-dock select{max-width:128px;font-size:9px;padding:9px 20px 9px 9px}
+  .music-control{padding:9px 11px;font-size:9px}
+  .scroll-hint{bottom:8px}
+}
+@media(max-width:380px){.btn-icon span{display:none}.btn-icon{padding:0 13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+<noscript><style>.gate{display:none}.hero-inner{opacity:1}.reveal{opacity:1;transform:none}body.locked{overflow:auto}</style></noscript>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
+</script>
+</head>
+<body class="locked">
+<div class="backdrop"></div>
+<canvas id="universe" aria-hidden="true"></canvas><div class="vignette"></div><div class="grain"></div>
+
+<!-- Palace doors intro: the tap also unlocks music on phones -->
+<div class="gate" id="gate" role="button" tabindex="0" aria-label="Open the wedding invitation">
+  <div class="gate-toran" aria-hidden="true"></div>
+  <div class="door door-l" aria-hidden="true"><div class="arch"></div><div class="seal-half">P</div><div class="knock"></div></div>
+  <div class="door door-r" aria-hidden="true"><div class="arch"></div><div class="seal-half">I</div><div class="knock"></div></div>
+  <div class="gate-light" aria-hidden="true"></div>
+  <div class="gate-ui">
+    <div class="gate-top">
+      <div class="g1" lang="hi">॥ श्री गणेशाय नमः ॥</div>
+      <div class="g2">Piyush &amp; Ishika</div>
+      <div class="g3">SHUBH VIVAH · 2026</div>
+    </div>
+    <div>
+      <button class="gate-cta" id="gateBtn" type="button">✦ &nbsp;TAP TO OPEN&nbsp; ✦</button>
+      <div class="gate-sound">🔊 BEST WITH SOUND ON</div>
+    </div>
+  </div>
+</div>
+
+<div class="music-dock">
+  <select id="musicStyle" aria-label="Choose wedding music">
+    <option value="shehnai">Shehnai Dhun</option>
+    <option value="mangal">Mangal Aarti</option>
+    <option value="baraat">Baraat Dhol</option>
+  </select>
+  <button class="music-control" id="musicToggle" type="button" aria-pressed="false" aria-label="Play wedding music">
+    <span id="musicLabel">PLAY</span><span class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+</div>
+<div class="sound-note" id="soundNote" role="status"></div>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">A celebration of love • 2026</div>
+    <p class="ganesh" lang="hi">॥ श्री गणेशाय नमः ॥</p>
+    <article class="card" id="inviteCard">
+      <span class="card-frame" aria-hidden="true"></span>
+      <span class="card-shimmer" aria-hidden="true"></span>
+      <span class="card-glare" aria-hidden="true"></span>
+      <div class="card-body">
+        <div class="topline" lang="hi">मंगलम भगवान विष्णु, मंगलम गरुड़ध्वजः।<br>मंगलम पुण्डरीकाक्ष, मंगलाय तनो हरिः॥</div>
+        <div class="title-hi" lang="hi">शुभ विवाह</div>
+        <div class="subtitle">WEDDING INVITATION</div>
+        <div class="divider">✧ ❦ ✧</div>
+        <div class="couple">Piyush <span class="amp">&amp;</span> Ishika</div>
+        <p class="invite-copy" lang="hi">स्नेह, विश्वास और साथ के इस पावन बंधन में<br>आप सादर आमंत्रित हैं।<br>आपकी उपस्थिति हमारे लिए गौरव की बात होगी।</p>
+        <div class="date-ribbon">SAVE THE DATE</div>
+        <div class="date-big">11 · 12 · 2026</div>
+        <div class="date-sub" lang="hi">शुक्रवार • शुभ विवाह (रात्रि में)</div>
+        <button class="open-btn" id="toCelebrations" type="button">VIEW THE CELEBRATIONS&nbsp; ✦</button>
+      </div>
+    </article>
+    <div class="countdown-panel" aria-live="off">
+      <div class="countdown-heading" id="countdownHeading">COUNTING DOWN TO THE SHUBH VIVAH</div>
+      <div class="countdown">
+        <div><strong id="days">00</strong><span>DAYS</span></div>
+        <div><strong id="hours">00</strong><span>HOURS</span></div>
+        <div><strong id="minutes">00</strong><span>MINUTES</span></div>
+        <div><strong id="seconds">00</strong><span>SECONDS</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL TO EXPLORE<span>⌄</span></div>
+</section>
+
+<section class="section" id="celebrations">
+  <div class="section-inner">
+    <div class="section-kicker reveal">Days of traditions, rituals &amp; joy</div>
+    <h2 class="section-title reveal">The Celebrations</h2>
+    <div class="section-orn reveal">❧ ✧ ❧</div>
+    <div class="events">
+      <article class="event reveal" style="--d:0s">
+        <div class="medallion" aria-hidden="true">🪔</div>
+        <div class="day">09</div><div class="month">December · Wednesday</div>
+        <h3 lang="hi">श्री सत्यनारायण पूजा एवं संगीत</h3>
+        <p>An auspicious beginning with prayers, music and blessings.</p>
+        <span class="tag">DAY ONE</span>
+      </article>
+      <article class="event reveal" style="--d:.12s">
+        <div class="medallion" aria-hidden="true">🌼</div>
+        <div class="day">10</div><div class="month">December · Thursday</div>
+        <h3 lang="hi">कुमरम, हल्दी एवं मेहंदी</h3>
+        <p>A day filled with colour, laughter, traditions and togetherness.</p>
+        <span class="tag">DAY TWO</span>
+      </article>
+      <article class="event reveal" style="--d:.24s">
+        <div class="medallion" aria-hidden="true">💍</div>
+        <div class="day">11</div><div class="month">December · Friday</div>
+        <h3 lang="hi">शुभ विवाह</h3>
+        <p>Join us as two hearts begin a beautiful journey together.</p>
+        <span class="tag">THE WEDDING · NIGHT</span>
+      </article>
+      <article class="event reveal" style="--d:.36s">
+        <div class="medallion" aria-hidden="true">🎊</div>
+        <div class="day">26</div><div class="month">December · Saturday</div>
+        <h3 lang="hi">स्वागत समारोह</h3>
+        <p>Welcome &amp; reception in Purnea to celebrate the newlyweds.</p>
+        <span class="tag">RECEPTION · 7 PM</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="venues">
+  <div class="section-inner">
+    <div class="section-kicker reveal">We would be honoured by your presence</div>
+    <h2 class="section-title reveal">The Venues</h2>
+    <div class="section-orn reveal">❧ ✧ ❧</div>
+    <div class="venue-wrap">
+
+      <article class="venue reveal" style="--d:0s">
+        <div class="venue-head">
+          <div class="pin-anim" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+          <div><div class="venue-tag">Wedding Ceremony</div><h3>Royal Venue by Floriana</h3></div>
+        </div>
+        <ul class="venue-meta">
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Friday, 11 December 2026</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Night ceremony · <span lang="hi">शुभ विवाह (रात्रि में)</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>B-48 GT Karnal Road, Industrial Area, Ashok Vihar, Delhi — 110033</span></li>
+        </ul>
+        <div class="venue-bottom">
+          <div class="map-frame">
+            <div class="map-skeleton" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+            <iframe title="Map: Royal Venue by Floriana, Delhi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-src="https://www.google.com/maps?q=Royal+Venue+By+Floriana,+B-48,+GT+Karnal+Road,+Ashok+Vihar,+Delhi+110033&output=embed"></iframe>
+            <button class="map-cover" type="button" aria-label="Enable interactive map"><span>✋ TAP TO EXPLORE MAP</span></button>
+          </div>
+          <div class="venue-actions">
+            <a class="btn-primary" href="https://maps.app.goo.gl/bYsqYH4H6mjpTgnw7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>OPEN IN GOOGLE MAPS</a>
+            <button class="btn-icon" type="button" data-copy="https://maps.app.goo.gl/bYsqYH4H6mjpTgnw7" aria-label="Copy map link"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>COPY</span></button>
+            <button class="btn-icon" type="button" data-share="https://maps.app.goo.gl/bYsqYH4H6mjpTgnw7" data-title="Piyush & Ishika — Wedding Venue" data-text="Royal Venue by Floriana, Ashok Vihar, Delhi · 11 December 2026" aria-label="Share location"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>SHARE</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="venue reveal" style="--d:.15s">
+        <div class="venue-head">
+          <div class="pin-anim" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+          <div><div class="venue-tag">Welcome &amp; Reception</div><h3>New Occasion Marriage Hall</h3></div>
+        </div>
+        <ul class="venue-meta">
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Saturday, 26 December 2026</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>7:00 PM onwards</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Sipahi Tola Road, Madhubani, Purnea, Bihar — 854301</span></li>
+        </ul>
+        <div class="venue-bottom">
+          <div class="map-frame">
+            <div class="map-skeleton" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+            <iframe title="Map: New Occasion Marriage Hall, Purnea" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-src="https://www.google.com/maps?q=QFH7%2BF7W+Marriage+Hall,+Shivaji+Colony,+Purnia,+Bihar+854301&output=embed"></iframe>
+            <button class="map-cover" type="button" aria-label="Enable interactive map"><span>✋ TAP TO EXPLORE MAP</span></button>
+          </div>
+          <div class="venue-actions">
+            <a class="btn-primary" href="https://maps.app.goo.gl/5W8k65vbNmTJXT7F8?g_st=ac" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>OPEN IN GOOGLE MAPS</a>
+            <button class="btn-icon" type="button" data-copy="https://maps.app.goo.gl/5W8k65vbNmTJXT7F8?g_st=ac" aria-label="Copy map link"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>COPY</span></button>
+            <button class="btn-icon" type="button" data-share="https://maps.app.goo.gl/5W8k65vbNmTJXT7F8?g_st=ac" data-title="Piyush & Ishika — Reception Venue" data-text="New Occasion Marriage Hall, Purnea · 26 December 2026, 7 PM" aria-label="Share location"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>SHARE</span></button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="blessing reveal">
+  <div class="ornament">❧ ✧ ❧</div>
+  <span lang="hi">आपके स्नेह और आशीर्वाद की प्रतीक्षा में</span>
+  <strong>Piyush &amp; Ishika</strong>
+  <div class="ornament">❧ ✧ ❧</div>
+</section>
+<footer class="footer">MADE WITH LOVE · <span lang="hi">शुभ विवाह</span> · 2026</footer>
+</main>
+
+<!-- ═══════════════ UI + Indian wedding music engine (works even if 3D fails) ═══════════════ -->
+<script>
+(() => {
+'use strict';
+/* Want a real recording instead of the synthesized music?
+   Put an MP3 next to this file and set its name here, e.g. 'shehnai.mp3'. */
+const CUSTOM_MUSIC_URL = '';
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+/* ───────────── Music engine: shehnai + tanpura + dholak/dhol + manjira ───────────── */
+const Music = (() => {
+  const SEMI = {S:0,r:1,R:2,g:3,G:4,m:5,M:6,P:7,d:8,D:9,n:10,N:11};
+  const TOKEN = /^(~)?(?:\(([SrRgGmMPdDnN])([',]*)\))?([SrRgGmMPdDnN-])([',]*)(?::([\d.]+))?$/;
+  // Notation: sargam (komal = lowercase r g d n, tivra Ma = M), ' upper octave, , lower octave,
+  // :beats duration, ~ meend (glide into note), (X) kan-swar grace note, - rest.
+  const TRACKS = {
+    shehnai: { // Raag Yaman, dadra taal (6 beats) on dholak
+      sa: 277.18, bpm: 96, steps: 2, lead: .2, vib: 18, tan: .05, drone: 1, lead_in: 2.2,
+      kit: {bass:108,bv:.5,bd:.28,treb:640,tv:.2,td:.1,snap:2600,cv:.03},
+      lanes: {B:'X.x...x....g', T:'X.xgx.x.xgx.', C:'x.....x.....'},
+      mel: `N,:1 R:1 G:1 ~M:2 G:1 | R:1 G:1 (G)R:1 S:3 | G:1 M:1 D:1 ~N:2 D:1 | P:1 M:1 G:1 ~R:2 -:1 |
+            G:.5 M:.5 D:1 N:1 S':2 (S')N:1 | R':1 S':1 N:1 ~D:2 P:1 | M:1 G:1 M:1 ~D:2 P:1 | M:1 G:1 R:1 ~G:2 R:1 |
+            N,:1 R:1 G:1 R:1 (R)S:2 | P:1 D:1 N:1 S':3 | N:.5 R':.5 G':1 R':1 ~S':3 | N:1 D:1 P:1 ~M:2 G:1 |
+            R:1 G:1 ~R:1 S:2 -:1 | -:6`
+    },
+    mangal: { // Raag Bhairavi, slow keherwa with manjira — devotional, for pheras
+      sa: 277.18, bpm: 66, steps: 2, lead: .17, vib: 22, tan: .07, drone: 1.25, lead_in: 2.6,
+      kit: {bass:104,bv:.32,bd:.32,treb:620,tv:.12,td:.1,snap:2600,cv:.045},
+      lanes: {B:'x.......x.......', T:'....g.......g...', C:'x...x...x...x...'},
+      mel: `S:2 (r)g:1 r:1 ~S:2 n,:1 S:1 | g:1 m:1 P:2 ~d:1 P:1 m:2 | g:1 m:1 (m)g:1 r:1 ~S:4 |
+            m:1 P:1 d:1 n:1 ~S':3 n:1 | d:1 n:1 ~r':2 S':2 n:1 d:1 | P:2 d:1 ~P:1 m:1 g:1 m:2 |
+            g:1 r:1 g:1 m:1 ~g:2 r:2 | n,:1 S:1 ~r:2 S:3 -:1 | -:8`
+    },
+    baraat: { // Bilawal (major), bhangra-style dhol for the baraat
+      sa: 293.66, bpm: 120, steps: 4, lead: .2, vib: 14, tan: 0, drone: .7, lead_in: 1.1,
+      kit: {bass:62,bv:.9,bd:.45,treb:520,tv:.22,td:.06,snap:3400,cv:.025},
+      lanes: {B:'X.....x.X.......X.....x.X...x.x.', T:'..x.x..xx.x.x.x...x.x..xx.xxxxxx', C:'x...x...x...x...x...x...x...x...'},
+      mel: `S:.5 G:.5 P:.5 G:.5 S':1 P:1 | D:.5 P:.5 G:.5 P:.5 ~D:2 | P:.5 D:.5 S':.5 D:.5 P:.5 G:.5 R:.5 G:.5 | P:1 (P)G:.5 R:.5 S:2 |
+            G:.5 G:.5 P:.5 P:.5 D:.5 D:.5 P:1 | G:.5 P:.5 D:.5 S':.5 ~R':2 | S':.5 N:.5 D:.5 P:.5 G:.5 P:.5 D:1 | P:.5 G:.5 R:.5 G:.5 S:2 |
+            S':1 S':.5 N:.5 D:1 P:1 | G:.5 P:.5 D:.5 P:.5 ~S':2 | D:.5 S':.5 R':.5 S':.5 D:.5 P:.5 G:1 | R:.5 G:.5 P:.5 G:.5 S:1 -:1`
+    }
+  };
+
+  let ctx = null, out, wetFade, comp, verb, melBus, drumBus, noise, reed;
+  let voice = null, drone = [], timer = null, cur = null, playing = false, key = 'shehnai';
+  let mel = [], mi = 0, tNote = 0, si = 0, tStep = 0, ti = 0, tTan = 0, lastF = 0, wasRest = true;
+
+  const octOf = m => { let o = 0; for (const c of m || '') o += c === "'" ? 1 : -1; return o; };
+  const fq = (tr, n, m) => tr.sa * Math.pow(2, (SEMI[n] + 12 * octOf(m)) / 12);
+  function parse(tr) {
+    const res = [];
+    tr.mel.trim().split(/\s+/).forEach(tok => {
+      if (tok === '|') return;
+      const m = TOKEN.exec(tok);
+      if (!m) { console.warn('Bad note', tok); return; }
+      res.push({ f: m[4] === '-' ? 0 : fq(tr, m[4], m[5]), dur: parseFloat(m[6] || '1'), glide: !!m[1], grace: m[2] ? fq(tr, m[2], m[3]) : 0 });
+    });
+    const beats = res.reduce((a, n) => a + n.dur, 0), cyc = tr.lanes.B.length / tr.steps, pad = (cyc - beats % cyc) % cyc;
+    if (pad > .001) res.push({ f: 0, dur: pad });
+    return res;
+  }
+  const filt = (type, f, q, g) => { const b = ctx.createBiquadFilter(); b.type = type; b.frequency.value = f; b.Q.value = q; if (g !== undefined) b.gain.value = g; return b; };
+  function bus(dry, wet) {
+    const g = ctx.createGain(), d = ctx.createGain(), w = ctx.createGain();
+    d.gain.value = dry; w.gain.value = wet; g.connect(d); d.connect(out); g.connect(w); w.connect(wetFade); return g;
+  }
+  function impulse(sec, decay) {
+    const r = ctx.sampleRate, l = Math.floor(r * sec), b = ctx.createBuffer(2, l, r);
+    for (let c = 0; c < 2; c++) { const d = b.getChannelData(c); for (let i = 0; i < l; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / l, decay) * Math.min(1, i / (r * .012)); }
+    return b;
+  }
+  function init() {
+    if (ctx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    ctx = new AC({ latencyHint: 'playback' });
+    comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -16; comp.knee.value = 10; comp.ratio.value = 3.5; comp.attack.value = .004; comp.release.value = .25;
+    comp.connect(ctx.destination);
+    out = ctx.createGain(); out.gain.value = 0; out.connect(comp);
+    verb = ctx.createConvolver(); verb.buffer = impulse(2.8, 3.2); verb.connect(comp);
+    wetFade = ctx.createGain(); wetFade.gain.value = 0; wetFade.connect(verb);
+    melBus = bus(1, .4); drumBus = bus(.95, .12);
+    const len = ctx.sampleRate * 2; noise = ctx.createBuffer(1, len, ctx.sampleRate);
+    const nd = noise.getChannelData(0); for (let i = 0; i < len; i++) nd[i] = Math.random() * 2 - 1;
+    // Double-reed spectrum: strong low harmonics with a nasal 3rd–5th
+    const h = [0,1,.78,.9,.72,.6,.48,.38,.3,.24,.19,.15,.12,.09,.07,.055,.042,.032,.025,.019,.014];
+    reed = ctx.createPeriodicWave(new Float32Array(h.length), new Float32Array(h));
+  }
+  function fade(to, sec) {
+    const t = ctx.currentTime;
+    [out.gain, wetFade.gain].forEach(p => { p.cancelScheduledValues(t); p.setValueAtTime(p.value, t); p.linearRampToValueAtTime(to, t + sec); });
+  }
+  /* Shehnai: one continuous breath-driven voice so phrases are legato with real meend */
+  function makeVoice() {
+    const v = {}, t = ctx.currentTime;
+    v.o1 = ctx.createOscillator(); v.o2 = ctx.createOscillator();
+    [v.o1, v.o2].forEach(o => { o.setPeriodicWave(reed); o.frequency.value = cur.sa; });
+    v.o2.detune.value = 7;
+    v.lfo = ctx.createOscillator(); v.lfo.frequency.value = 5.4;
+    v.vib = ctx.createGain(); v.vib.gain.value = 0;
+    v.lfo.connect(v.vib); v.vib.connect(v.o1.detune); v.vib.connect(v.o2.detune);
+    const mix = ctx.createGain(); mix.gain.value = .5; v.o1.connect(mix); v.o2.connect(mix);
+    const hp = filt('highpass', 260, .7), f1 = filt('peaking', 1180, 1.3, 7), f2 = filt('peaking', 2850, 2.2, 5), lp = filt('lowpass', 5600, .6);
+    mix.connect(hp); hp.connect(f1); f1.connect(f2); f2.connect(lp);
+    v.amp = ctx.createGain(); v.amp.gain.value = 0; lp.connect(v.amp);
+    v.br = ctx.createBufferSource(); v.br.buffer = noise; v.br.loop = true;
+    const bp = filt('bandpass', 2600, .9), bg = ctx.createGain(); bg.gain.value = .05;
+    v.br.connect(bp); bp.connect(bg); bg.connect(v.amp);
+    v.amp.connect(melBus);
+    [v.o1, v.o2, v.lfo, v.br].forEach(n => n.start(t));
+    return v;
+  }
+  function killVoice(v, t) {
+    if (!v) return;
+    v.amp.gain.cancelScheduledValues(t); v.amp.gain.setTargetAtTime(0, t, .08);
+    [v.o1, v.o2, v.lfo, v.br].forEach(n => { try { n.stop(t + .7); } catch (e) {} });
+  }
+  function playNote(n, t) {
+    const v = voice, dur = n.dur * 60 / cur.bpm, L = cur.lead, A = v.amp.gain, F = [v.o1.frequency, v.o2.frequency];
+    if (!n.f) { A.setTargetAtTime(0, t, .07); v.vib.gain.setTargetAtTime(0, t, .05); wasRest = true; return; }
+    let s = t;
+    if (n.grace) { F.forEach(p => p.setTargetAtTime(n.grace, t, .006)); s = t + Math.min(.075, dur * .3); }
+    if (n.glide && lastF && !wasRest) {
+      const g = Math.min(dur * .5, .32);
+      F.forEach(p => { p.setValueAtTime(n.grace || lastF, s); p.exponentialRampToValueAtTime(n.f, s + g); });
+    } else F.forEach(p => p.setTargetAtTime(n.f, s, .01));
+    if (wasRest) { A.setValueAtTime(0, t); A.linearRampToValueAtTime(L, t + .09); }
+    else if (!n.glide) { A.setTargetAtTime(L * .45, t - .02, .007); A.setTargetAtTime(L, t + .012, .025); }
+    if (dur > .7) A.setTargetAtTime(L * 1.12, t + dur * .35, dur * .35);
+    v.vib.gain.setTargetAtTime(0, t, .03);
+    if (dur > .42) v.vib.gain.setTargetAtTime(cur.vib, t + Math.min(.22, dur * .3), dur * .22);
+    lastF = n.f; wasRest = false;
+  }
+  function nz(t, v, type, f, d) {
+    const s = ctx.createBufferSource(); s.buffer = noise;
+    const b = filt(type, f, type === 'bandpass' ? 1.4 : .7), g = ctx.createGain();
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(v, .0002), t + .002); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+    s.connect(b); b.connect(g); g.connect(drumBus); s.start(t, Math.random() * 1.5); s.stop(t + d + .02);
+  }
+  function hit(type, t, v) {
+    const k = cur.kit;
+    if (type === 'B') { // dha / ghe — bass membrane with a pitch bend
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(k.bass * 1.7, t); o.frequency.exponentialRampToValueAtTime(k.bass, t + .05);
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(v * k.bv, t + .004); g.gain.exponentialRampToValueAtTime(.0001, t + k.bd);
+      o.connect(g); g.connect(drumBus); o.start(t); o.stop(t + k.bd + .05);
+      nz(t, v * k.bv * .35, 'lowpass', 700, .04);
+    } else if (type === 'T') { // na / tin — treble skin
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'triangle'; o.frequency.setValueAtTime(k.treb * 1.05, t); o.frequency.exponentialRampToValueAtTime(k.treb, t + .03);
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(v * k.tv, t + .002); g.gain.exponentialRampToValueAtTime(.0001, t + k.td);
+      o.connect(g); g.connect(drumBus); o.start(t); o.stop(t + k.td + .05);
+      nz(t, v * k.tv * .9, 'bandpass', k.snap, .05);
+    } else if (type === 'C') { // manjira — bright inharmonic ring
+      [2637, 3952, 5274, 7040].forEach((f, i) => {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = f * (1 + i * .003);
+        g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(v * k.cv / (1 + i * .7), t + .003); g.gain.exponentialRampToValueAtTime(.0001, t + 1.1 - i * .18);
+        o.connect(g); g.connect(melBus); o.start(t); o.stop(t + 1.2);
+      });
+    }
+  }
+  function pluck(f, t) { // tanpura string with jawari buzz
+    const g = ctx.createGain(), lp = filt('lowpass', 3800, 5);
+    lp.frequency.setValueAtTime(3800, t); lp.frequency.setTargetAtTime(650, t + .02, .9);
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(cur.tan, t + .012); g.gain.setTargetAtTime(.0001, t + .1, 1.25);
+    [-3, 3].forEach(dt => { const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = f; o.detune.value = dt; o.connect(lp); o.start(t); o.stop(t + 5); });
+    lp.connect(g); g.connect(melBus);
+  }
+  function startDrone() { // sur (drone shehnai) on Sa–Pa–Sa
+    const base = cur.sa / 2, t = ctx.currentTime;
+    [[base, .022], [base * 1.5, .012], [base * 2, .008]].forEach(([f, a]) => {
+      const o = ctx.createOscillator(); o.setPeriodicWave(reed); o.frequency.value = f;
+      const lp = filt('lowpass', 900, .5), g = ctx.createGain();
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(a * cur.drone, t + 2);
+      o.connect(lp); lp.connect(g); g.connect(melBus); o.start(t); drone.push({ o, g });
+    });
+  }
+  function stopDrone(t) { drone.forEach(({ o, g }) => { g.gain.cancelScheduledValues(t); g.gain.setTargetAtTime(0, t, .15); try { o.stop(t + 1); } catch (e) {} }); drone = []; }
+  function tick() {
+    if (!playing || !voice) return;
+    const spb = 60 / cur.bpm, ahead = ctx.currentTime + .3, L = cur.lanes, len = L.B.length, sd = spb / cur.steps;
+    while (tNote < ahead) { const n = mel[mi]; playNote(n, tNote); tNote += n.dur * spb; mi = (mi + 1) % mel.length; }
+    while (tStep < ahead) {
+      for (const k in L) { const c = L[k][si]; if (c && c !== '.') hit(k, tStep, c === 'X' ? 1 : c === 'x' ? .65 : .3); }
+      tStep += sd; si = (si + 1) % len;
+    }
+    if (cur.tan) while (tTan < ahead) {
+      const b = cur.sa / 2, fs = [b * .75, b, b, b / 2], gaps = [1.1, 1.1, 1.1, 1.6];
+      pluck(fs[ti], tTan); tTan += gaps[ti]; ti = (ti + 1) % 4;
+    }
+  }
+  function begin() {
+    cur = TRACKS[key]; mel = cur.parsed || (cur.parsed = parse(cur));
+    mi = si = ti = 0; lastF = 0; wasRest = true;
+    const t = ctx.currentTime + .12;
+    tNote = t + cur.lead_in; tStep = t + cur.lead_in * .5; tTan = t;
+    voice = makeVoice(); startDrone();
+    clearInterval(timer); timer = setInterval(tick, 40); tick();
+  }
+  function end(t) { clearInterval(timer); timer = null; killVoice(voice, t); voice = null; stopDrone(t); }
+  function unlockIOS() { // plays a silent buffer inside the tap so iOS opens the audio route
+    try { const b = ctx.createBufferSource(); b.buffer = ctx.createBuffer(1, 1, 22050); b.connect(ctx.destination); b.start(0); } catch (e) {}
+  }
+  async function play(k) {
+    if (k && TRACKS[k]) key = k;
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+    try { init(); } catch (e) { return false; }
+    unlockIOS();
+    if (ctx.state !== 'running') { try { await ctx.resume(); } catch (e) {} }
+    if (ctx.state !== 'running') return false;
+    if (playing) return true;
+    playing = true; begin(); fade(.9, 1.2);
+    return true;
+  }
+  function stop() {
+    if (!ctx || !playing) return;
+    playing = false; fade(0, .5); end(ctx.currentTime + .5);
+    setTimeout(() => { if (!playing && ctx.state === 'running') ctx.suspend().catch(() => {}); }, 900);
+  }
+  function setTrack(k) {
+    if (!TRACKS[k]) return;
+    key = k; if (!playing || !ctx) return;
+    fade(0, .35); end(ctx.currentTime + .35);
+    setTimeout(() => { if (!playing) return; begin(); fade(.9, .8); }, 420);
+  }
+  function bell() { // temple ghanti when the doors open
+    if (!ctx || ctx.state !== 'running') return;
+    const t = ctx.currentTime + .05, f = 740;
+    [[.5,.5,4],[1,1,3.2],[1.19,.45,2.4],[1.5,.35,2],[2,.5,1.8],[2.52,.22,1.2],[3.01,.18,1],[4.1,.1,.7]].forEach(([r, a, d]) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.value = f * r;
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(a * .12, t + .004); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+      o.connect(g); g.connect(comp); g.connect(verb); o.start(t); o.stop(t + d + .1);
+    });
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (!ctx || !playing) return;
+    if (document.hidden) ctx.suspend().catch(() => {}); else ctx.resume().catch(() => {});
+  });
+  return { play, stop, setTrack, bell, get playing() { return playing; }, get context() { return ctx; }, get output() { return comp; }, TRACKS };
+})();
+window.WeddingMusic = Music;
+
+/* ───────────── Music UI ───────────── */
+const toggle = $('#musicToggle'), label = $('#musicLabel'), sel = $('#musicStyle'), note = $('#soundNote');
+let custom = null, on = false, noteTimer;
+if (CUSTOM_MUSIC_URL) { custom = new Audio(CUSTOM_MUSIC_URL); custom.loop = true; custom.preload = 'auto'; sel.hidden = true; }
+function flash(text) { note.textContent = text; note.classList.add('show'); clearTimeout(noteTimer); noteTimer = setTimeout(() => note.classList.remove('show'), 3200); }
+function setUI(state) {
+  on = state; toggle.classList.toggle('playing', state);
+  label.textContent = state ? 'PAUSE' : 'PLAY';
+  toggle.setAttribute('aria-pressed', String(state));
+  toggle.setAttribute('aria-label', state ? 'Pause wedding music' : 'Play wedding music');
+}
+async function startMusic() {
+  let ok = false;
+  if (custom) { try { await custom.play(); ok = true; } catch (e) {} }
+  else ok = await Music.play(sel.value);
+  setUI(ok);
+  return ok;
+}
+function stopMusic() { if (custom) custom.pause(); else Music.stop(); setUI(false); }
+toggle.addEventListener('click', () => {
+  if (on) stopMusic();
+  else startMusic().then(ok => ok && flash('♫ ' + (custom ? 'Playing' : sel.options[sel.selectedIndex].text)));
+});
+sel.addEventListener('change', () => {
+  Music.setTrack(sel.value);
+  if (!on) startMusic();
+  flash('♫ ' + sel.options[sel.selectedIndex].text);
+});
+
+/* ───────────── Gate ───────────── */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+scrollTo(0, 0);
+const gate = $('#gate'), body = document.body;
+let opened = false;
+function armUnlock() { // if the browser still blocked sound, the very next tap starts it
+  const go = e => {
+    if (e.target.closest && e.target.closest('#musicToggle,#musicStyle')) return;
+    startMusic(); ['pointerdown', 'keydown'].forEach(n => removeEventListener(n, go, true));
+  };
+  ['pointerdown', 'keydown'].forEach(n => addEventListener(n, go, true));
+}
+function openGate() {
+  if (opened) return; opened = true;
+  startMusic().then(ok => {
+    if (ok) { if (!custom) Music.bell(); flash('♫ ' + (custom ? 'Wedding music' : sel.options[sel.selectedIndex].text) + ' — change it anytime'); }
+    else { flash('Tap anywhere to enable music ♫'); armUnlock(); }
+  });
+  gate.classList.add('open'); body.classList.remove('locked'); body.classList.add('opened');
+  dispatchEvent(new Event('invite-open'));
+  setTimeout(() => dispatchEvent(new Event('petal-shower')), 900);
+  setTimeout(() => { gate.classList.add('gone'); gate.setAttribute('aria-hidden', 'true'); }, 2400);
+}
+gate.addEventListener('click', openGate);
+gate.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGate(); } });
+gate.focus({ preventScroll: true });
+
+/* ───────────── Card 3D tilt (mouse on desktop, gyroscope on Android) ───────────── */
+const card = $('#inviteCard'), hero = $('#home');
+window.__tilt = { x: 0, y: 0 };
+function tiltTo(x, y) {
+  card.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
+  card.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg');
+  card.style.setProperty('--gx', (50 + x * 80).toFixed(1) + '%');
+  card.style.setProperty('--gy', (30 + y * 80).toFixed(1) + '%');
+}
+if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  hero.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    const x = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / r.width));
+    const y = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / r.height));
+    card.classList.add('tilting'); tiltTo(x * .8, y * .8);
+  });
+  hero.addEventListener('pointerleave', () => { card.classList.remove('tilting'); tiltTo(0, 0); });
+} else if ('DeviceOrientationEvent' in window && typeof DeviceOrientationEvent.requestPermission !== 'function') {
+  addEventListener('deviceorientation', e => {
+    if (e.gamma == null) return;
+    const x = Math.max(-1, Math.min(1, e.gamma / 35)), y = Math.max(-1, Math.min(1, (e.beta - 50) / 35));
+    window.__tilt.x = x; window.__tilt.y = y;
+    card.classList.add('tilting'); tiltTo(x * .6, y * .6);
+  }, { passive: true });
+}
+
+/* ───────────── Countdown ───────────── */
+const target = new Date('2026-12-11T19:00:00+05:30').getTime();
+function tickCountdown() {
+  const diff = Math.max(0, target - Date.now());
+  const v = { days: Math.floor(diff / 864e5), hours: Math.floor(diff % 864e5 / 36e5), minutes: Math.floor(diff % 36e5 / 6e4), seconds: Math.floor(diff % 6e4 / 1e3) };
+  for (const k in v) { const el = document.getElementById(k); if (el) el.textContent = String(v[k]).padStart(2, '0'); }
+  if (!diff) $('#countdownHeading').textContent = 'THE CELEBRATIONS HAVE BEGUN ✦';
+}
+tickCountdown(); setInterval(tickCountdown, 1000);
+
+/* ───────────── Reveal on scroll ───────────── */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: .12 });
+$$('.reveal').forEach(el => io.observe(el));
+
+/* ───────────── Maps: lazy-load, tap-to-interact (stops the map hijacking scroll on phones) ───────────── */
+const mapIO = new IntersectionObserver(es => es.forEach(e => {
+  const f = e.target;
+  if (e.isIntersecting) {
+    if (!f.dataset.loaded) {
+      const ifr = f.querySelector('iframe');
+      ifr.addEventListener('load', () => f.classList.add('loaded'), { once: true });
+      ifr.src = ifr.dataset.src; f.dataset.loaded = '1';
+      setTimeout(() => f.classList.add('loaded'), 6000);
+    }
+  } else f.classList.remove('active');
+}), { rootMargin: '300px 0px' });
+$$('.map-frame').forEach(f => { mapIO.observe(f); f.querySelector('.map-cover').addEventListener('click', () => f.classList.add('active')); });
+
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); return true; } catch (e) {
+    const ta = document.createElement('textarea'); ta.value = t; ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (err) {} ta.remove(); return ok;
+  }
+}
+$$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+  const span = b.querySelector('span'), old = span.textContent;
+  span.textContent = (await copyText(b.dataset.copy)) ? 'COPIED ✓' : 'USE OPEN';
+  b.style.display = 'inline-flex'; setTimeout(() => span.textContent = old, 2000);
+  flash('Map link copied ✓');
+}));
+$$('[data-share]').forEach(b => {
+  if (!navigator.share) { b.hidden = true; return; }
+  b.addEventListener('click', () => navigator.share({ title: b.dataset.title, text: b.dataset.text, url: b.dataset.share }).catch(() => {}));
+});
+
+/* ───────────── Sparkles & petal shower ───────────── */
+function burst(x, y) {
+  for (let i = 0; i < 22; i++) {
+    const el = document.createElement('span'); el.className = 'sparkle'; el.textContent = ['✦', '✧', '❀', '·'][i % 4];
+    el.style.left = x + 'px'; el.style.top = y + 'px';
+    el.style.setProperty('--sx', (Math.random() * 300 - 150) + 'px'); el.style.setProperty('--sy', (Math.random() * -220 - 20) + 'px');
+    el.style.fontSize = (10 + Math.random() * 18) + 'px'; document.body.appendChild(el); setTimeout(() => el.remove(), 1600);
+  }
+}
+$('#toCelebrations').addEventListener('click', e => {
+  const r = e.currentTarget.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 2);
+  dispatchEvent(new Event('petal-shower'));
+  setTimeout(() => $('#celebrations').scrollIntoView({ behavior: 'smooth' }), 350);
+});
+
+/* Fallback if WebGL / three.js can't load: simple CSS petals */
+setTimeout(() => {
+  if (window.__sceneReady) return;
+  body.classList.add('no-webgl');
+  const sym = ['✿', '❀', '✽'];
+  setInterval(() => {
+    const el = document.createElement('span'); el.className = 'petal'; el.textContent = sym[Math.random() * 3 | 0];
+    el.style.left = Math.random() * 100 + 'vw'; el.style.color = ['#ff9a2a', '#ffc23a', '#e0374f'][Math.random() * 3 | 0];
+    el.style.setProperty('--drift', (Math.random() * 180 - 90) + 'px'); el.style.animationDuration = (9 + Math.random() * 9) + 's';
+    el.style.fontSize = (10 + Math.random() * 13) + 'px'; document.body.appendChild(el); setTimeout(() => el.remove(), 19000);
+  }, 900);
+}, 6000);
+})();
+</script>
+
+<!-- ═══════════════ Three.js scene: mandala, diyas, marigold garlands, petals ═══════════════ -->
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+function initScene() {
+  const canvas = document.getElementById('universe');
+  const LOW = matchMedia('(pointer: coarse)').matches || Math.min(innerWidth, innerHeight) < 700;
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SPEED = REDUCED ? .3 : 1;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !LOW, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, LOW ? 1.5 : 2));
+  renderer.setSize(innerWidth, innerHeight, false);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x2a070c, 16, 40);
+  const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, .1, 90);
+  const CAM_Z = 12, START_Z = 24, PARALLAX = 5.2;
+  camera.position.set(0, 0, START_Z);
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), .04).texture;
+  pmrem.dispose();
+  scene.add(new THREE.HemisphereLight(0xffe4b5, 0x3a0a12, .7));
+  const sun = new THREE.DirectionalLight(0xffd8a0, 1.6); sun.position.set(4, 6, 10); scene.add(sun);
+  const warm = new THREE.PointLight(0xff9d45, 30, 30, 2); warm.position.set(0, 1, 2); scene.add(warm);
+
+  /* textures */
+  const canvasTex = (w, h, draw) => { const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; };
+  const glowTex = canvasTex(128, 128, (g, w, h) => { const r = g.createRadialGradient(64, 64, 0, 64, 64, 64); r.addColorStop(0, 'rgba(255,230,170,1)'); r.addColorStop(.25, 'rgba(255,170,70,.5)'); r.addColorStop(1, 'rgba(255,120,30,0)'); g.fillStyle = r; g.fillRect(0, 0, w, h); });
+  const flameTex = canvasTex(64, 128, g => {
+    g.translate(32, 0);
+    const r = g.createRadialGradient(0, 96, 2, 0, 80, 48);
+    r.addColorStop(0, 'rgba(255,255,240,1)'); r.addColorStop(.3, 'rgba(255,220,130,1)'); r.addColorStop(.65, 'rgba(255,130,30,.9)'); r.addColorStop(1, 'rgba(200,50,0,0)');
+    g.fillStyle = r; g.beginPath(); g.moveTo(0, 4); g.bezierCurveTo(14, 40, 26, 72, 22, 94); g.bezierCurveTo(18, 120, -18, 120, -22, 94); g.bezierCurveTo(-26, 72, -14, 40, 0, 4); g.fill();
+  });
+  const dotTex = canvasTex(32, 32, g => { const r = g.createRadialGradient(16, 16, 0, 16, 16, 16); r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(.4, 'rgba(255,240,200,.55)'); r.addColorStop(1, 'rgba(255,220,150,0)'); g.fillStyle = r; g.fillRect(0, 0, 32, 32); });
+
+  /* materials — gold + meenakari enamel */
+  const gold = new THREE.MeshStandardMaterial({ color: 0xe0ac4f, metalness: 1, roughness: .26 });
+  const paleGold = new THREE.MeshStandardMaterial({ color: 0xffd98a, metalness: 1, roughness: .32 });
+  const ruby = new THREE.MeshStandardMaterial({ color: 0x9b1b2a, metalness: .35, roughness: .32 });
+  const emerald = new THREE.MeshStandardMaterial({ color: 0x14694f, metalness: .4, roughness: .32 });
+  const pearl = new THREE.MeshStandardMaterial({ color: 0xfff4e0, metalness: .1, roughness: .22 });
+
+  const dummy = new THREE.Object3D();
+  function petalShape(w, l) { const s = new THREE.Shape(); s.moveTo(0, 0); s.bezierCurveTo(w, l * .22, w * .95, l * .68, 0, l); s.bezierCurveTo(-w * .95, l * .68, -w, l * .22, 0, 0); return s; }
+  const petalGeo = (w, l, d = .05) => new THREE.ExtrudeGeometry(petalShape(w, l), { depth: d, bevelEnabled: true, bevelThickness: d * .5, bevelSize: Math.min(d * .6, w * .15), bevelSegments: 2, curveSegments: LOW ? 8 : 14 });
+  const sphere = (r, seg = 12) => new THREE.SphereGeometry(r, seg, Math.max(6, seg * .75 | 0));
+  const torus = (r, t = .03) => new THREE.Mesh(new THREE.TorusGeometry(r, t, 8, LOW ? 120 : 200), gold);
+  function ringOf(geo, mat, n, r, o = {}) {
+    const m = new THREE.InstancedMesh(geo, mat, n);
+    for (let i = 0; i < n; i++) {
+      const a = (o.off || 0) + i / n * Math.PI * 2;
+      dummy.position.set(Math.cos(a) * r, Math.sin(a) * r, o.z || 0);
+      dummy.rotation.set(0, 0, a - Math.PI / 2); if (o.tilt) dummy.rotateX(o.tilt);
+      dummy.scale.setScalar(o.s || 1); dummy.updateMatrix(); m.setMatrixAt(i, dummy.matrix);
+    }
+    m.instanceMatrix.needsUpdate = true; return m;
+  }
+
+  /* ── 3D lotus mandala ── */
+  function buildMandala() {
+    const mats = [gold, paleGold, ruby, emerald, pearl].map(m => { const c = m.clone(); c.userData.base = m.color.clone(); return c; });
+    const [gold_, paleGold_, ruby_, emerald_, pearl_] = mats;
+    const torus = (r, t = .03) => new THREE.Mesh(new THREE.TorusGeometry(r, t, 8, LOW ? 120 : 200), gold_);
+    const g = new THREE.Group(), layers = [];
+    const L = (speed, ...objs) => { const lg = new THREE.Group(); objs.forEach(o => lg.add(o)); lg.userData.speed = speed; g.add(lg); layers.push(lg); };
+    const core = new THREE.Mesh(sphere(.32, 24), gold_); core.scale.z = .6;
+    L(.12, core, ringOf(petalGeo(.2, .55, .04), ruby_, 8, .25, { tilt: .7 }));
+    L(.06, ringOf(petalGeo(.55, 1.55), gold_, 8, .5, { tilt: .42 }), ringOf(petalGeo(.32, 1.05, .03), ruby_, 8, .62, { tilt: .42, z: .07 }));
+    L(-.04, ringOf(petalGeo(.42, 1.25), paleGold_, 16, 1.7, { off: Math.PI / 16, tilt: .22 }), ringOf(petalGeo(.22, .7, .03), emerald_, 16, 1.85, { off: Math.PI / 16, tilt: .22, z: .07 }), torus(1.62, .035));
+    L(.028, torus(3.05), ringOf(petalGeo(.28, .82, .04), ruby_, 24, 3.12, { tilt: .12 }), ringOf(sphere(.06), gold_, 24, 3.12, { off: Math.PI / 24 }));
+    L(-.02, torus(4.0, .028), ringOf(petalGeo(.27, .75, .04), gold_, 32, 4.08, { off: Math.PI / 32 }), ringOf(sphere(.07, 10), pearl_, 64, 4.95));
+    L(.014, torus(5.18, .026), ringOf(petalGeo(.15, .42, .03), emerald_, 48, 5.26), ringOf(sphere(.05, 8), gold_, 96, 5.9), torus(6.1, .02));
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: 0xff9a40, transparent: true, opacity: .45, blending: THREE.AdditiveBlending, depthWrite: false }));
+    halo.scale.setScalar(17); halo.position.z = -.6; g.add(halo);
+    g.userData.halo = halo; return { g, layers, mats, halo, dim(k) { mats.forEach(m => m.color.copy(m.userData.base).multiplyScalar(k)); halo.material.opacity = .45 * k; } };
+  }
+  const M = buildMandala(); M.g.position.set(0, .3, -5); scene.add(M.g);
+  const M2 = buildMandala(), M2g = M2.g, M2layers = M2.layers;
+  M2g.scale.setScalar(.55); M2.dim(.42); scene.add(M2g);
+
+  /* ── Diyas (clay oil lamps) with flickering flames ── */
+  function diyaGeo() {
+    const pts = [[0,0],[.16,0],[.3,.03],[.42,.1],[.49,.19],[.5,.24],[.46,.25],[.41,.19],[.3,.13],[.16,.11],[0,.11]];
+    const g = new THREE.LatheGeometry(pts.map(([x, y]) => new THREE.Vector2(x, y)), LOW ? 28 : 44);
+    const p = g.attributes.position, col = new Float32Array(p.count * 3);
+    const palette = [[.7,.31,.17],[.7,.31,.17],[.66,.28,.15],[.88,.62,.25],[.62,.1,.1],[.9,.66,.28],[.9,.66,.28],[.45,.2,.1],[.42,.18,.09],[.4,.17,.08],[.4,.17,.08]];
+    for (let i = 0; i < p.count; i++) {
+      let x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+      const a = Math.atan2(z, x), r = Math.hypot(x, z) / .5, w = Math.pow(Math.max(0, Math.cos(a)), 8) * r * r;
+      x *= 1 + w * .55; z *= 1 - w * .3; y += w * .05; p.setXYZ(i, x, y, z);
+      const c = palette[i % pts.length]; col.set(c.map(v => Math.pow(v, 2.2)), i * 3);
+    }
+    g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    g.computeVertexNormals(); return g;
+  }
+  const diyaG = diyaGeo(), oilG = new THREE.CircleGeometry(.4, 24); oilG.rotateX(-Math.PI / 2);
+  const clay = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .78, metalness: 0, envMapIntensity: .5, side: THREE.DoubleSide, emissive: 0x2a0802, emissiveIntensity: .5 });
+  const oilM = new THREE.MeshStandardMaterial({ color: 0x7a4510, roughness: .15, metalness: .3, emissive: 0x6a3005, emissiveIntensity: .6 });
+  const flameM = new THREE.SpriteMaterial({ map: flameTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true });
+  const glowM = new THREE.SpriteMaterial({ map: glowTex, color: 0xffa648, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: .6 });
+  const halfH = z => Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * (CAM_Z - z);
+  let camY = 0;
+  const diyas = [];
+  function spawnDiya(d, initial, fromTop) {
+    const u = d.userData; u.z = -10 + Math.random() * 9;
+    const hh = halfH(u.z), hw = hh * camera.aspect;
+    let x = Math.random() * 2 - 1; x = Math.sign(x) * Math.pow(Math.abs(x), .55);
+    u.x = x * hw * .95;
+    u.y = initial ? camY + (Math.random() * 2 - 1) * hh : fromTop ? camY + hh + 1 : camY - hh - 1.2;
+    u.vy = (.12 + Math.random() * .18); u.rot = Math.random() * 6.28;
+  }
+  for (let i = 0; i < (LOW ? 8 : 14); i++) {
+    const d = new THREE.Group();
+    const oil = new THREE.Mesh(oilG, oilM); oil.position.y = .17; oil.scale.set(.95, 1, .9);
+    const flame = new THREE.Sprite(flameM); flame.center.set(.5, .08); flame.position.set(.7, .28, 0); flame.scale.set(.2, .4, 1);
+    const glow = new THREE.Sprite(glowM); glow.position.set(.7, .42, 0); glow.scale.setScalar(1.8);
+    d.add(new THREE.Mesh(diyaG, clay), oil, flame, glow);
+    d.userData = { flame, glow, ph: Math.random() * 10 }; d.scale.setScalar(.8 + Math.random() * .5);
+    spawnDiya(d, true); scene.add(d); diyas.push(d);
+  }
+
+  /* ── Marigold garlands (genda phool toran) with mango leaves and gold ghungroo ── */
+  function marigoldGeo(r) {
+    const g = new THREE.SphereGeometry(r, LOW ? 16 : 22, LOW ? 12 : 16), p = g.attributes.position, c = new Float32Array(p.count * 3), v = new THREE.Vector3();
+    for (let i = 0; i < p.count; i++) {
+      v.fromBufferAttribute(p, i); const n = v.clone().normalize();
+      const th = Math.atan2(n.z, n.x), ph = Math.acos(THREE.MathUtils.clamp(n.y, -1, 1));
+      const ruf = .5 + .5 * Math.sin(ph) * Math.sin(th * 9 + ph * 5) * Math.cos(ph * 11 - th * 3);
+      v.multiplyScalar(.86 + ruf * .26); p.setXYZ(i, v.x, v.y * .9, v.z);
+      const sh = .5 + .5 * ruf; c[i * 3] = sh; c[i * 3 + 1] = sh; c[i * 3 + 2] = sh;
+    }
+    g.setAttribute('color', new THREE.BufferAttribute(c, 3)); g.computeVertexNormals(); return g;
+  }
+  const MAXF = 520, MAXL = 80, MAXB = 40;
+  const mari = new THREE.InstancedMesh(marigoldGeo(.16), new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .8 }), MAXF);
+  const leafGeo = new THREE.ShapeGeometry(petalShape(.12, .48), 6); leafGeo.rotateZ(Math.PI);
+  const leaves = new THREE.InstancedMesh(leafGeo, new THREE.MeshStandardMaterial({ color: 0x2f7a35, roughness: .5, side: THREE.DoubleSide }), MAXL);
+  const bells = new THREE.InstancedMesh(new THREE.ConeGeometry(.08, .2, 12), gold, MAXB);
+  [mari, leaves, bells].forEach(m => { m.frustumCulled = false; m.instanceMatrix.setUsage(THREE.DynamicDrawUsage); scene.add(m); });
+  const marCols = [0xff8c00, 0xffb300, 0xf26a00, 0xffc93c].map(c => new THREE.Color(c));
+  let F = [], LV = [], BL = [], garlandTop = 0;
+  function layoutGarlands() {
+    F = []; LV = []; BL = [];
+    const z = -1, hh = halfH(z), hw = hh * camera.aspect, top = hh + .12, sp = .27;
+    garlandTop = top;
+    const nS = Math.max(3, Math.round(hw * 2 / 2.6)), x0 = -hw - .25, seg = (hw * 2 + .5) / nS;
+    for (let s = 0; s <= nS; s++) {
+      const jx = x0 + s * seg;
+      for (let l = -1; l <= 1; l++) LV.push({ x: jx + l * .1, y: top + .02, z: z + .1, rz: l * .4, ph: s, w: .5 });
+      const drop = camera.aspect < 1 ? (s % 2 ? 3 : 4) : (s % 2 ? 4 : 6) + (hw > 6 ? 2 : 0);
+      for (let k = 1; k <= drop; k++) F.push({ x: jx, y: top - k * sp, z, w: Math.pow(k / drop, 1.3), ph: s * 1.7, c: marCols[(k + s) % 4], s: .9 });
+      BL.push({ x: jx, y: top - (drop + .75) * sp, z, w: 1, ph: s * 1.7 });
+      if (s === nS) break;
+      const droop = Math.min(.95, seg * .3), n = Math.max(6, Math.round(seg * 1.15 / sp));
+      for (let k = 1; k < n; k++) { const u = k / n; F.push({ x: jx + seg * u, y: top - droop * 4 * u * (1 - u), z: z + .02, w: 4 * u * (1 - u) * .5, ph: s * 1.3, c: marCols[(k + s) % 2], s: 1 }); }
+    }
+    const strands = camera.aspect > 1 ? [[-1, .7, 0], [-1, .55, 1], [1, .7, 0], [1, .55, 1]] : [[-1, .38, 0], [1, .38, 0]];
+    strands.forEach(([side, frac, idx], si) => {
+      const sx = side * (hw - .32 - idx * .42), n = Math.round(2 * hh * frac / sp);
+      for (let k = 0; k < n; k++) F.push({ x: sx, y: top - .1 - k * sp, z: z + .05, w: Math.pow(k / n, 1.3) * 1.6, ph: si * 2.1, c: marCols[k % 3 === 2 ? 2 : k % 2], s: 1.05 });
+      BL.push({ x: sx, y: top - .1 - (n - .25) * sp, z: z + .05, w: 1.6, ph: si * 2.1 });
+    });
+    F = F.slice(0, MAXF); LV = LV.slice(0, MAXL); BL = BL.slice(0, MAXB);
+    F.forEach((f, i) => { f.rx = Math.random() * 6; f.ry = Math.random() * 6; mari.setColorAt(i, f.c); });
+    mari.instanceColor.needsUpdate = true;
+    mari.count = F.length; leaves.count = LV.length; bells.count = BL.length;
+  }
+  function updateGarlands(t) {
+    const visible = camY > garlandTop - 2 * halfH(-1) * 1.6 - 2;
+    mari.visible = leaves.visible = bells.visible = visible;
+    if (!visible) return;
+    for (let i = 0; i < F.length; i++) {
+      const f = F[i], sw = Math.sin(t * .9 + f.ph) * .09 * f.w;
+      dummy.position.set(f.x + sw, f.y, f.z + Math.cos(t * .7 + f.ph) * .04 * f.w);
+      dummy.rotation.set(f.rx, f.ry + t * .05, 0); dummy.scale.setScalar(f.s); dummy.updateMatrix(); mari.setMatrixAt(i, dummy.matrix);
+    }
+    for (let i = 0; i < LV.length; i++) {
+      const l = LV[i]; dummy.position.set(l.x, l.y, l.z); dummy.rotation.set(0, Math.sin(t * .8 + l.ph) * .3, l.rz + Math.sin(t * 1.1 + l.ph) * .08); dummy.scale.setScalar(1); dummy.updateMatrix(); leaves.setMatrixAt(i, dummy.matrix);
+    }
+    for (let i = 0; i < BL.length; i++) {
+      const b = BL[i]; dummy.position.set(b.x + Math.sin(t * .9 + b.ph) * .09 * b.w, b.y, b.z); dummy.rotation.set(0, t, Math.sin(t * .9 + b.ph) * .1); dummy.updateMatrix(); bells.setMatrixAt(i, dummy.matrix);
+    }
+    mari.instanceMatrix.needsUpdate = leaves.instanceMatrix.needsUpdate = bells.instanceMatrix.needsUpdate = true;
+  }
+
+  /* ── Falling rose & marigold petals (pushpa varsha) ── */
+  const petalG = (() => { const g = new THREE.ShapeGeometry(petalShape(.075, .2), 5), p = g.attributes.position; for (let i = 0; i < p.count; i++) { const x = p.getX(i); p.setZ(i, -x * x * 9); } g.translate(0, -.1, 0); g.computeVertexNormals(); return g; })();
+  const NP = LOW ? 80 : 170, BASE = LOW ? 40 : 85;
+  const petals = new THREE.InstancedMesh(petalG, new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, roughness: .55 }), NP);
+  petals.frustumCulled = false; petals.instanceMatrix.setUsage(THREE.DynamicDrawUsage); scene.add(petals);
+  const pal = [0xb5122d, 0xc8193a, 0xd42a4c, 0xff8a00, 0xff9f0a, 0xffb300, 0xffc23a, 0xe8505f].map(c => new THREE.Color(c));
+  const P = []; let showerUntil = -1, clockT = 0;
+  function spawnPetal(i, mode) {
+    const p = P[i]; p.z = -6 + Math.random() * 11; const hh = halfH(p.z);
+    p.x = (Math.random() * 2 - 1) * hh * camera.aspect * 1.05;
+    p.y = mode === 'init' ? camY + (Math.random() * 2 - 1) * hh : mode === 'shower' ? camY + hh + Math.random() * hh * 1.6 : camY + hh + Math.random() * 1.5;
+    p.vy = .35 + Math.random() * .45; p.ph = Math.random() * 6.28; p.sx = .5 + Math.random() * 1.2;
+    p.rx = .6 + Math.random() * 1.6; p.ry = .4 + Math.random() * 1.2; p.rz = Math.random() * .8; p.s = .8 + Math.random() * .7;
+    p.sleep = i >= BASE && clockT > showerUntil;
+  }
+  for (let i = 0; i < NP; i++) { P.push({}); spawnPetal(i, 'init'); petals.setColorAt(i, pal[Math.random() * pal.length | 0]); }
+  petals.instanceColor.needsUpdate = true;
+  function shower() { showerUntil = clockT + 7; for (let i = 0; i < NP; i++) spawnPetal(i, 'shower'); }
+  function updatePetals(dt, t) {
+    const boost = t < showerUntil ? 1.5 : 1;
+    for (let i = 0; i < NP; i++) {
+      const p = P[i];
+      if (p.sleep) { dummy.scale.setScalar(0); dummy.updateMatrix(); petals.setMatrixAt(i, dummy.matrix); continue; }
+      p.y -= p.vy * dt * boost * SPEED; p.x += Math.sin(t * p.sx + p.ph) * .3 * dt * SPEED;
+      const hh = halfH(p.z);
+      if (p.y < camY - hh - .5) spawnPetal(i, 'top');
+      else if (p.y > camY + hh + 4 && t > showerUntil) p.y = camY + (Math.random() * 2 - 1) * hh;
+      dummy.position.set(p.x, p.y, p.z); dummy.rotation.set(t * p.rx + p.ph, t * p.ry, t * p.rz); dummy.scale.setScalar(p.s); dummy.updateMatrix(); petals.setMatrixAt(i, dummy.matrix);
+    }
+    petals.instanceMatrix.needsUpdate = true;
+  }
+
+  /* ── Golden dust ── */
+  const ND = LOW ? 220 : 480, dGeo = new THREE.BufferGeometry(), dPos = new Float32Array(ND * 3), dSeed = new Float32Array(ND);
+  for (let i = 0; i < ND; i++) { dPos[i * 3] = (Math.random() * 2 - 1) * 15; dPos[i * 3 + 1] = (Math.random() * 2 - 1) * 9; dPos[i * 3 + 2] = -10 + Math.random() * 16; dSeed[i] = Math.random() * 6.28; }
+  dGeo.setAttribute('position', new THREE.BufferAttribute(dPos, 3));
+  const dust = new THREE.Points(dGeo, new THREE.PointsMaterial({ map: dotTex, size: LOW ? .13 : .1, color: 0xffd28a, transparent: true, opacity: .85, depthWrite: false, blending: THREE.AdditiveBlending }));
+  dust.frustumCulled = false; scene.add(dust);
+
+  /* ── Layout / resize ── */
+  let lastW = 0, lastH = 0, targetY = 0;
+  const pageMaxY = () => -Math.max(0, document.documentElement.scrollHeight - innerHeight) / innerHeight * PARALLAX;
+  function placeBottomMandala() { M2g.position.set(0, pageMaxY() - .6, -6); }
+  function layout(force) {
+    const w = innerWidth, h = innerHeight;
+    if (!force && w === lastW && Math.abs(h - lastH) < 160) { placeBottomMandala(); return; } // ignore mobile URL-bar jitter
+    lastW = w; lastH = h;
+    camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h, false);
+    const portrait = w / h < .8;
+    M.g.userData.base = portrait ? .82 : 1.4; M.g.position.y = portrait ? .8 : .3;
+    layoutGarlands(); placeBottomMandala();
+  }
+  layout(true);
+  addEventListener('resize', () => layout(false));
+  addEventListener('load', () => layout(true));
+  if ('ResizeObserver' in window) new ResizeObserver(placeBottomMandala).observe(document.body);
+
+  /* ── Interaction ── */
+  let mx = 0, my = 0, sx = 0, sy = 0, introT = -1, introDone = false;
+  addEventListener('pointermove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+  const onScroll = () => { targetY = -scrollY / innerHeight * PARALLAX; };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  addEventListener('invite-open', () => { introT = 0; });
+  addEventListener('petal-shower', shower);
+  if (document.body.classList.contains('opened')) introT = 0;
+
+  const easeOutBack = k => { const c1 = 1.4, c3 = c1 + 1; return 1 + c3 * Math.pow(k - 1, 3) + c1 * Math.pow(k - 1, 2); };
+  const clock = new THREE.Clock();
+  function frame() {
+    requestAnimationFrame(frame);
+    const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime; clockT = t;
+    const tilt = window.__tilt || { x: 0, y: 0 };
+    sx += (mx + tilt.x * .5 - sx) * Math.min(1, dt * 2.5); sy += (my + tilt.y * .5 - sy) * Math.min(1, dt * 2.5);
+    camY += (targetY - camY) * Math.min(1, dt * 6);
+
+    let z = CAM_Z, ms = 1, spin = 0;
+    if (!introDone) {
+      if (introT < 0) { z = START_Z; ms = .35; spin = t * .05; }
+      else {
+        introT += dt; const k = Math.min(1, introT / (REDUCED ? .01 : 2.8)), e = 1 - Math.pow(1 - k, 3);
+        z = START_Z + (CAM_Z - START_Z) * e; ms = .35 + .65 * easeOutBack(k); spin = (1 - e) * -1.6;
+        if (k >= 1) introDone = true;
+      }
+    }
+    camera.position.set(sx * 1.1, camY - sy * .6, z);
+    camera.lookAt(sx * .45, camY, -5);
+    warm.position.y = camY + 1;
+
+    // mandala
+    M.g.scale.setScalar(ms * (M.g.userData.base || 1)); M.g.rotation.z = spin;
+    M.g.rotation.x = sy * .25 + Math.sin(t * .3) * .06; M.g.rotation.y = sx * .35;
+    M.dim(1 - .68 * Math.min(1, Math.max(0, -camY / (PARALLAX * .85))));
+    M.layers.forEach(l => { l.rotation.z += l.userData.speed * dt * SPEED; });
+    M2layers.forEach(l => { l.rotation.z += l.userData.speed * dt * SPEED; });
+    M2g.rotation.x = Math.sin(t * .3) * .08;
+
+    // diyas
+    for (const d of diyas) {
+      const u = d.userData; u.y += u.vy * dt * SPEED;
+      const hh = halfH(u.z);
+      if (u.y > camY + hh + 1.4) spawnDiya(d, false, false);
+      else if (u.y < camY - hh - 2.5) spawnDiya(d, false, true);
+      d.position.set(u.x + Math.sin(t * .4 + u.ph) * .25, u.y + Math.sin(t * 1.1 + u.ph) * .06, u.z);
+      d.rotation.set(.38 + Math.sin(t * .7 + u.ph) * .05, u.rot + t * .1 * SPEED, Math.sin(t * .9 + u.ph) * .05);
+      const f = 1 + Math.sin(t * 14 + u.ph) * .08 + Math.sin(t * 23 + u.ph * 1.7) * .06;
+      u.flame.scale.set(.2 * (1.04 - (f - 1) * .5), .4 * f, 1); u.glow.scale.setScalar(1.8 * (.92 + (f - 1) * .8));
+    }
+
+    updateGarlands(t);
+    updatePetals(dt, t);
+
+    // dust drifts upward around the camera
+    for (let i = 0; i < ND; i++) {
+      let y = dPos[i * 3 + 1] + dt * (.08 + (dSeed[i] % 1) * .12) * SPEED;
+      if (y > 9) y -= 18; dPos[i * 3 + 1] = y; dPos[i * 3] += Math.sin(t * .5 + dSeed[i]) * dt * .05;
+    }
+    dGeo.attributes.position.needsUpdate = true; dust.position.y = camY;
+
+    renderer.render(scene, camera);
+  }
+  frame();
+  window.__sceneReady = true;
+  requestAnimationFrame(() => document.body.classList.add('scene-ready'));
+}
+try { initScene(); } catch (err) { console.warn('3D scene unavailable:', err); document.body.classList.add('no-webgl'); }
+</script>
+</body>
+</html>
