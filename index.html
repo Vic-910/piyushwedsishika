@@ -42,8 +42,13 @@ main{position:relative;z-index:3}
 .arch:before{content:"✿";position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-size:26px;color:var(--gold);text-shadow:0 0 12px rgba(255,190,90,.6)}
 .arch:after{content:"";position:absolute;inset:12px;border:1px dashed rgba(231,189,104,.35);border-radius:inherit}
 .seal-half{position:absolute;top:50%;width:clamp(64px,14vw,112px);height:clamp(128px,28vw,224px);transform:translateY(-50%);display:grid;align-items:center;
-  font:clamp(40px,8.5vw,70px)/1 'Great Vibes',cursive;color:#5d0f17;box-shadow:0 0 34px rgba(231,189,104,.45);z-index:1}
+  font:700 clamp(36px,7.5vw,62px)/1 Cinzel,serif;color:#5d0f17;text-shadow:0 1px 0 rgba(255,240,200,.7);box-shadow:0 0 34px rgba(231,189,104,.45);z-index:1}
 .door-l .seal-half{right:0;border-radius:999px 0 0 999px;justify-items:end;padding-right:clamp(8px,2vw,16px);background:radial-gradient(circle at 100% 50%,#fff3c8 0,#ecc066 38%,#b47a32 70%,#7a4413 100%)}
+.seal-half{overflow:hidden}
+.seal-heart{--h:clamp(58px,12vw,98px);position:absolute;top:50%;width:var(--h);height:var(--h);margin-top:calc(var(--h) / -2);fill:#7a171d;stroke:#fff0c4;stroke-width:.7;filter:drop-shadow(0 2px 3px rgba(60,10,14,.45));animation:heartBeat 1.6s ease-in-out infinite}
+.door-l .seal-heart{right:calc(var(--h) / -2)}
+.door-r .seal-heart{left:calc(var(--h) / -2)}
+@keyframes heartBeat{0%,40%,100%{transform:scale(1)}15%{transform:scale(1.12)}28%{transform:scale(1.04)}}
 .door-r .seal-half{left:0;border-radius:0 999px 999px 0;justify-items:start;padding-left:clamp(8px,2vw,16px);background:radial-gradient(circle at 0% 50%,#fff3c8 0,#ecc066 38%,#b47a32 70%,#7a4413 100%)}
 .knock{position:absolute;top:calc(50% + clamp(78px,16vw,130px));width:30px;height:30px;border:3px solid #e2b45e;border-radius:50%;box-shadow:0 0 12px rgba(231,189,104,.5),inset 0 0 6px rgba(0,0,0,.4)}
 .door-l .knock{right:clamp(14px,3vw,26px)}.door-r .knock{left:clamp(14px,3vw,26px)}
@@ -143,7 +148,10 @@ body.opened .scroll-hint{opacity:.8}
 .event .tag{display:inline-block;margin-top:16px;padding:6px 13px;border-radius:20px;background:#7a171d;color:#ffe9b8;font:9px Cinzel,serif;letter-spacing:.18em}
 
 /* Venues */
-.venue-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;perspective:1200px}
+.venue-wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch;perspective:1200px}
+.venue-wrap .venue h3{font-size:clamp(30px,3vw,36px)}
+@media(max-width:1100px){.venue-wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.venue-wrap .venue:nth-child(3){grid-column:1/-1;justify-self:center;width:calc(50% - 11px)}}
+@media(max-width:820px){.venue-wrap{grid-template-columns:1fr}.venue-wrap .venue:nth-child(3){width:auto;justify-self:stretch}}
 .venue{position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;border-radius:24px;background:var(--paper);color:#4c1718;border:1px solid #d6ad62;
   box-shadow:0 20px 44px rgba(9,2,3,.45);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
 .venue:before{content:"";position:absolute;inset:8px;border:1px solid rgba(160,100,30,.38);border-radius:18px;pointer-events:none}
@@ -177,6 +185,14 @@ body.opened .scroll-hint{opacity:.8}
 .map-cover span{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:30px;background:rgba(43,11,14,.9);color:#ffe9b8;font:10px Cinzel,serif;letter-spacing:.12em;border:1px solid #d9b56e;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .25s}
 .map-cover:hover span{transform:translateY(-2px)}
 .map-frame.active .map-cover{opacity:0;pointer-events:none}
+.map-static{display:block;text-decoration:none;color:inherit}
+.map-static .map-skeleton{animation:none;background-position:150% 0,0 0,0 0,0 0,0 0}
+.map-static .stay-pin{position:relative;display:grid;place-items:center}
+.map-static .stay-pin:before,.map-static .stay-pin:after{content:"";position:absolute;width:46px;height:16px;top:34px;border-radius:50%;border:2px solid #a0302c;animation:ripple 2.4s ease-out infinite}
+.map-static .stay-pin:after{animation-delay:1.2s}
+.map-static .stay-pin svg{width:46px;height:46px}
+.map-static .map-cover{pointer-events:none}
+.map-static:hover .map-cover span{transform:translateY(-2px)}
 .venue-actions{display:flex;gap:8px;margin-top:12px}
 .btn-primary{position:relative;overflow:hidden;flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 14px;border-radius:30px;
   background:linear-gradient(135deg,#7a171d,#a8352b);color:#fff0cb;text-decoration:none;font:600 10px Cinzel,serif;letter-spacing:.1em;box-shadow:0 6px 16px rgba(122,23,29,.3);transition:transform .2s,box-shadow .2s}
@@ -223,7 +239,6 @@ body.opened .music-dock{opacity:1;transform:none;pointer-events:auto}
 @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(650deg);opacity:.1}}
 
 @media(max-width:1020px){.events{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:820px){.venue-wrap{grid-template-columns:1fr}}
 @media(max-width:600px){
   .events{grid-template-columns:1fr;gap:16px}
   .event h3{min-height:0}
@@ -258,8 +273,8 @@ body.opened .music-dock{opacity:1;transform:none;pointer-events:auto}
 <!-- Palace doors intro: the tap also unlocks music on phones -->
 <div class="gate" id="gate" role="button" tabindex="0" aria-label="Open the wedding invitation">
   <div class="gate-toran" aria-hidden="true"></div>
-  <div class="door door-l" aria-hidden="true"><div class="arch"></div><div class="seal-half">P</div><div class="knock"></div></div>
-  <div class="door door-r" aria-hidden="true"><div class="arch"></div><div class="seal-half">I</div><div class="knock"></div></div>
+  <div class="door door-l" aria-hidden="true"><div class="arch"></div><div class="seal-half"><svg class="seal-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><div class="knock"></div></div>
+  <div class="door door-r" aria-hidden="true"><div class="arch"></div><div class="seal-half"><svg class="seal-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><div class="knock"></div></div>
   <div class="gate-light" aria-hidden="true"></div>
   <div class="gate-ui">
     <div class="gate-top">
@@ -410,6 +425,28 @@ body.opened .music-dock{opacity:1;transform:none;pointer-events:auto}
             <a class="btn-primary" href="https://maps.app.goo.gl/5W8k65vbNmTJXT7F8?g_st=ac" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>OPEN IN GOOGLE MAPS</a>
             <button class="btn-icon" type="button" data-copy="https://maps.app.goo.gl/5W8k65vbNmTJXT7F8?g_st=ac" aria-label="Copy map link"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>COPY</span></button>
             <button class="btn-icon" type="button" data-share="https://maps.app.goo.gl/5W8k65vbNmTJXT7F8?g_st=ac" data-title="Piyush & Ishika — Reception Venue" data-text="New Occasion Marriage Hall, Purnea · 26 December 2026, 7 PM" aria-label="Share location"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>SHARE</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="venue reveal" style="--d:.3s">
+        <div class="venue-head">
+          <div class="pin-anim" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11h-6v-6H9v6z"/></svg></div>
+          <div><div class="venue-tag">Guest Stay</div><h3>Guest Accommodation</h3></div>
+        </div>
+        <ul class="venue-meta">
+          <li><svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11h-6v-6H9v6z"/></svg><span>Stay arranged for our guests</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Exact location on Google Maps — tap the map below</span></li>
+        </ul>
+        <div class="venue-bottom">
+          <a class="map-frame map-static" href="https://maps.app.goo.gl/9pjMEuxNa2VHimWc7" target="_blank" rel="noopener" aria-label="Open guest stay location in Google Maps">
+            <div class="map-skeleton" aria-hidden="true"><span class="stay-pin"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span></div>
+            <span class="map-cover" aria-hidden="true"><span>📍 TAP TO OPEN LOCATION</span></span>
+          </a>
+          <div class="venue-actions">
+            <a class="btn-primary" href="https://maps.app.goo.gl/9pjMEuxNa2VHimWc7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>OPEN IN GOOGLE MAPS</a>
+            <button class="btn-icon" type="button" data-copy="https://maps.app.goo.gl/9pjMEuxNa2VHimWc7" aria-label="Copy map link"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>COPY</span></button>
+            <button class="btn-icon" type="button" data-share="https://maps.app.goo.gl/9pjMEuxNa2VHimWc7" data-title="Piyush &amp; Ishika — Guest Stay" data-text="Guest accommodation for the wedding of Piyush &amp; Ishika" aria-label="Share location"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>SHARE</span></button>
           </div>
         </div>
       </article>
@@ -780,7 +817,7 @@ const mapIO = new IntersectionObserver(es => es.forEach(e => {
     }
   } else f.classList.remove('active');
 }), { rootMargin: '300px 0px' });
-$$('.map-frame').forEach(f => { mapIO.observe(f); f.querySelector('.map-cover').addEventListener('click', () => f.classList.add('active')); });
+$$('.map-frame:not(.map-static)').forEach(f => { mapIO.observe(f); f.querySelector('.map-cover').addEventListener('click', () => f.classList.add('active')); });
 
 async function copyText(t) {
   try { await navigator.clipboard.writeText(t); return true; } catch (e) {
